@@ -1,0 +1,13 @@
+{
+  "token": "<token>",
+  "clientId": "<clientId>",
+  "clientSecret": "<clientSecret>",
+  "guildId": "<developmentServerID>",
+  "prefix": "<defaultPrefix>",
+  "ownerID": "<ownerID>",
+  "creatorID": "<creatorID>",
+  "embedColor": "<defaultColorForEmbeds>",
+  "mongoURL": "<mongodbURL>",
+  "errorChannel": "<channelId>"
+
+}
