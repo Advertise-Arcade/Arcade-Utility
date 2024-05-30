@@ -23,7 +23,7 @@ module.exports = {
     )}:R>`;
 
     const infoEmbed = new EmbedBuilder()
-      .setAuthor({ name: "Cot Utility" })
+      .setAuthor({ name: client.user.username })
       .setColor("Blurple")
       .setFooter({ text: `Bot ID: ${client.user.id}` })
       .addFields(
@@ -44,7 +44,7 @@ module.exports = {
         },
         {
           name: `Total Commands:`,
-          value: `Message Commands: **${client.commands.size}**\nSlash Commands: **${client.slashCommands.size}**`,
+          value: `${client.slashCommands.size}`,
           inline: true,
         },
         {

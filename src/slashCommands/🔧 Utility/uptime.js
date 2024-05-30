@@ -46,14 +46,14 @@ module.exports = {
     const hostUptimeFormatted = format(hostUptime);
 
     const embed = new EmbedBuilder()
-      .setTitle("Cot Utility Uptime:")
+      .setTitle(`${client.user.username} Uptime:`)
       .setAuthor({
-        name: "Cot Utility",
+        name: client.user.username,
         iconURL: client.user.displayAvatarURL({ dynamic: true }),
       })
       .setColor("Random")
       .setDescription(
-        `<:icons_djoin:1234359282716377098> Bot Uptime: **${uptime}**\n<:icons_djoin:1234359282716377098> Host Uptime: **${hostUptimeFormatted}**`
+        `Bot Uptime: **${uptime}**\nHost Uptime: **${hostUptimeFormatted}**`
       );
 
     interaction.followUp({ embeds: [embed] });

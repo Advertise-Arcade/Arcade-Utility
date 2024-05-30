@@ -100,17 +100,6 @@ module.exports = {
     )
     .addSubcommand((subcommand) =>
       subcommand
-        .setName("kiss")
-        .setDescription("Kisses a user!")
-        .addUserOption((option) =>
-          option
-            .setName("user")
-            .setDescription("The user you want to kiss!")
-            .setRequired(true)
-        )
-    )
-    .addSubcommand((subcommand) =>
-      subcommand
         .setName("bonk")
         .setDescription("Bonks a user!")
         .addUserOption((option) =>

@@ -16,7 +16,9 @@ module.exports = {
   async execute(interaction, client) {
     const infoEmbed = new EmbedBuilder()
       .setColor("Blurple")
-      .setDescription(`**Cot Utility v${package.version} - Host Information**`)
+      .setDescription(
+        `**${client.user.username} v${package.version} - Host Information**`
+      )
       .addFields(
         {
           name: `Platform:`,

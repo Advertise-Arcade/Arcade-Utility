@@ -94,33 +94,6 @@ module.exports = async (client, interaction) => {
     });
   }
 
-  const { cooldowns } = interaction.client;
-
-  if (!cooldowns.has(slashCommand.data.name)) {
-    cooldowns.set(slashCommand.data.name, new Collection());
-  }
-
-  const now = Date.now();
-  const timestamps = cooldowns.get(slashCommand.data.name);
-  const defaultCooldownDuration = 3;
-  const cooldownAmount =
-    (slashCommand.cooldown ?? defaultCooldownDuration) * 1_000;
-
-  if (timestamps.has(interaction.user.id)) {
-    const expirationTime = timestamps.get(interaction.user.id) + cooldownAmount;
-
-    if (now < expirationTime) {
-      const expiredTimestamp = Math.round(expirationTime / 1_000);
-      return interaction.reply({
-        content: `You are on a cooldown for \`${slashCommand.data.name}\`! You can use it again <t:${expiredTimestamp}:R>.`,
-        ephemeral: true,
-      });
-    }
-  }
-
-  timestamps.set(interaction.user.id, now);
-  setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
-
   incrementCommandUsage();
 
   try {
